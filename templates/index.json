@@ -397,49 +397,15 @@
     },
     "newsletter_skillshift": {
       "type": "newsletter-skillshift",
-      "blocks": {
-        "benefit_1": {
-          "type": "benefit",
-          "settings": {
-            "icon": "lightbulb",
-            "text": "Weekly tech tips and career insights"
-          }
-        },
-        "benefit_2": {
-          "type": "benefit",
-          "settings": {
-            "icon": "gift",
-            "text": "Exclusive course discounts and early access"
-          }
-        },
-        "benefit_3": {
-          "type": "benefit",
-          "settings": {
-            "icon": "file-download",
-            "text": "Free downloadable resources and templates"
-          }
-        },
-        "benefit_4": {
-          "type": "benefit",
-          "settings": {
-            "icon": "graduation-cap",
-            "text": "Industry trends and learning strategies"
-          }
-        }
-      },
-      "block_order": [
-        "benefit_1",
-        "benefit_2",
-        "benefit_3",
-        "benefit_4"
-      ],
       "settings": {
+        "icon": "gift",
         "heading": "Get Your Free Career Transformation Checklist",
         "description": "Join 10,000+ professionals receiving weekly insights on tech careers, automation, and skill development",
-        "lead_magnet_title": "Free Download",
-        "lead_magnet_description": "10-Step Career Transformation Checklist",
+        "features": "Weekly tech tips and career insights|Exclusive course discounts and early access|Free downloadable resources and templates|Industry trends and learning strategies",
+        "email_placeholder": "Enter your email address",
         "button_text": "Get Free Checklist",
-        "privacy_text": "We respect your privacy. Unsubscribe anytime."
+        "privacy_text": "We respect your privacy. Unsubscribe anytime.",
+        "success_message": "Thanks! Check your email for your free checklist."
       }
     },
     "faq_skillshift": {

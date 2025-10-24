@@ -8,6 +8,131 @@
     "theme_support_url": "https://support.shopify.com/"
   },
   {
+    "name": "SkillShift Branding",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Brand Identity"
+      },
+      {
+        "type": "text",
+        "id": "site_title",
+        "label": "Site Title",
+        "default": "SkillShift"
+      },
+      {
+        "type": "text",
+        "id": "site_subtitle",
+        "label": "Site Subtitle",
+        "default": "WITH ANDREW GARDNER"
+      },
+      {
+        "type": "textarea",
+        "id": "site_tagline",
+        "label": "Site Tagline",
+        "default": "Transform Your Career with Expert-Led Technology Training"
+      },
+      {
+        "type": "header",
+        "content": "Colors - SkillShift Palette"
+      },
+      {
+        "type": "color",
+        "id": "brand_primary",
+        "label": "Primary (Deep Navy)",
+        "default": "#0f2b4c",
+        "info": "Main brand color - navy blue"
+      },
+      {
+        "type": "color",
+        "id": "brand_secondary",
+        "label": "Secondary (Medium Navy)",
+        "default": "#164969",
+        "info": "Secondary navy shade"
+      },
+      {
+        "type": "color",
+        "id": "brand_tertiary",
+        "label": "Tertiary (Teal Blue)",
+        "default": "#2e5e70",
+        "info": "Lighter navy/teal accent"
+      },
+      {
+        "type": "color",
+        "id": "brand_accent",
+        "label": "Accent (Mint Green)",
+        "default": "#4de3c8",
+        "info": "Primary accent color for CTAs and highlights"
+      },
+      {
+        "type": "color",
+        "id": "brand_surface",
+        "label": "Surface (Light Gray)",
+        "default": "#f8f9fa",
+        "info": "Background for cards and sections"
+      },
+      {
+        "type": "color",
+        "id": "brand_text",
+        "label": "Text Color (Dark)",
+        "default": "#2d3748",
+        "info": "Primary text color"
+      },
+      {
+        "type": "header",
+        "content": "Typography Settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_custom_fonts",
+        "label": "Use SkillShift Custom Fonts",
+        "default": true,
+        "info": "Plus Jakarta Sans for headings, Inter for body text"
+      },
+      {
+        "type": "header",
+        "content": "Button Styles"
+      },
+      {
+        "type": "range",
+        "id": "button_border_radius",
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "unit": "px",
+        "label": "Button Border Radius",
+        "default": 8,
+        "info": "Corner radius for buttons"
+      },
+      {
+        "type": "header",
+        "content": "Spacing & Layout"
+      },
+      {
+        "type": "range",
+        "id": "section_spacing",
+        "min": 40,
+        "max": 120,
+        "step": 8,
+        "unit": "px",
+        "label": "Section Vertical Spacing",
+        "default": 80,
+        "info": "Space between major sections"
+      },
+      {
+        "type": "range",
+        "id": "container_max_width",
+        "min": 1000,
+        "max": 1400,
+        "step": 50,
+        "unit": "px",
+        "label": "Container Max Width",
+        "default": 1200,
+        "info": "Maximum width for content containers"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.logo.name",
     "settings": [
       {

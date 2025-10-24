@@ -401,7 +401,7 @@
 
 body {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.0625rem; /* Increased from 1rem (16px -> 17px) */
   line-height: var(--leading-normal);
   color: var(--card-text);
 }
@@ -454,6 +454,7 @@ p {
   margin-top: 0;
   margin-bottom: var(--space-lg);
   line-height: var(--leading-relaxed);
+  font-size: 1.0625rem; /* Increased for better readability */
 }
 
 .section-title {
@@ -472,7 +473,7 @@ p {
 
 .section-subtitle,
 .section-description {
-  font-size: clamp(1.0625rem, 2vw, 1.25rem);
+  font-size: clamp(1.125rem, 2.2vw, 1.375rem); /* Increased minimum and maximum */
   color: var(--card-text);
   max-width: 65ch;
   margin: 0 auto var(--space-2xl);
@@ -654,7 +655,7 @@ p {
 }
 
 .testimonial-quote {
-  font-size: clamp(1rem, 2vw, 1.0625rem);
+  font-size: clamp(1.0625rem, 2vw, 1.1875rem); /* Increased from 1rem-1.0625rem to 1.0625rem-1.1875rem */
   line-height: var(--leading-relaxed);
   color: var(--card-text);
   margin-bottom: var(--space-xl);
@@ -669,13 +670,13 @@ p {
 
 .testimonial-name {
   font-weight: var(--font-weight-bold);
-  font-size: 1.0625rem;
+  font-size: 1.125rem; /* Increased from 1.0625rem */
   color: var(--navy-deep);
   margin-bottom: 0.25rem;
 }
 
 .testimonial-location {
-  font-size: 0.9375rem;
+  font-size: 1rem; /* Increased from 0.9375rem */
   color: var(--card-text-secondary);
   font-weight: var(--font-weight-medium);
 }
@@ -686,12 +687,13 @@ p {
   border-radius: var(--radius-full);
   background: linear-gradient(135deg, var(--mint-green) 0%, var(--teal-aqua) 100%);
   box-shadow: var(--shadow-mint-glow);
-  color: var(--navy-deep);
+  color: var(--navy-deep); /* Dark navy text on mint gradient - high contrast */
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 1;
+  font-weight: var(--font-weight-semibold); /* Make icons/text bolder */
 }
 
 .icon-badge-sm {
@@ -849,7 +851,7 @@ p {
 }
 
 .cta-guarantee {
-  font-size: clamp(0.875rem, 1.4vw, 1rem);
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem); /* Increased from 0.875rem-1rem */
   font-weight: var(--font-weight-medium);
   color: rgba(255, 255, 255, 0.95);
   margin-top: 1.5rem;

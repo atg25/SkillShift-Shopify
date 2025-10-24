@@ -25,7 +25,7 @@
           {%- when 'service_card' -%}
             <div class="card" {{ block.shopify_attributes }}>
               {%- if block.settings.badge_text != blank -%}
-                <div style="position: absolute; top: var(--space-md); right: var(--space-md); background: var(--mint-green); color: var(--navy-deep); padding: 0.375rem 0.875rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: var(--font-weight-bold); text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(77, 227, 200, 0.4); z-index: 2;">
+                <div style="position: absolute; top: var(--space-md); right: var(--space-md); background: var(--mint-green); color: var(--navy-deep); padding: 0.375rem 0.875rem; border-radius: var(--radius-full); font-size: 0.8125rem; font-weight: var(--font-weight-bold); text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(77, 227, 200, 0.4); z-index: 2;">
                   {{ block.settings.badge_text }}
                 </div>
               {%- endif -%}
@@ -47,7 +47,7 @@
               {%- endif -%}
               
               {%- if block.settings.description != blank -%}
-                <p style="font-size: 1rem; color: var(--card-text); line-height: 1.6; margin-bottom: var(--space-lg); text-align: center;">
+                <p style="font-size: 1.0625rem; color: var(--card-text); line-height: 1.6; margin-bottom: var(--space-lg); text-align: center;">
                   {{ block.settings.description }}
                 </p>
               {%- endif -%}
@@ -56,8 +56,8 @@
                 {%- assign features = block.settings.features | split: '|' -%}
                 <ul style="list-style: none; margin: var(--space-lg) 0 var(--space-xl) 0; padding: 0; width: 100%; text-align: left;">
                   {%- for feature in features -%}
-                    <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: var(--space-md); color: var(--card-text); line-height: 1.5; font-size: 0.9375rem;">
-                      <span style="color: var(--mint-green); font-weight: var(--font-weight-extrabold); font-size: 1.125rem; flex-shrink: 0;">✓</span>
+                    <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: var(--space-md); color: var(--card-text); line-height: 1.5; font-size: 1rem;">
+                      <span style="color: var(--mint-green); font-weight: var(--font-weight-extrabold); font-size: 1.25rem; flex-shrink: 0;">✓</span>
                       {{ feature | strip }}
                     </li>
                   {%- endfor -%}

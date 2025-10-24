@@ -67,9 +67,10 @@
     justify-content: center;
     background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
     border-radius: var(--radius-md);
-    color: white;
+    color: var(--color-primary); /* Changed from white to dark navy for contrast */
     font-size: 1.25rem;
     flex-shrink: 0;
+    font-weight: 600; /* Make icon symbols bolder */
   }
 
   .trust-stat-content {
@@ -79,14 +80,14 @@
   }
 
   .trust-stat-number {
-    font-size: 1.75rem;
+    font-size: 1.875rem; /* Increased from 1.75rem */
     font-weight: 700;
     color: var(--color-primary);
     line-height: 1;
   }
 
   .trust-stat-label {
-    font-size: 0.875rem;
+    font-size: 0.9375rem; /* Increased from 0.875rem */
     color: var(--color-body);
     text-transform: uppercase;
     letter-spacing: 0.5px;

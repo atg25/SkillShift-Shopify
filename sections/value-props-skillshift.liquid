@@ -79,12 +79,13 @@
     justify-content: center;
     background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
     border-radius: var(--radius-full);
-    color: white;
+    color: var(--color-primary); /* Changed from white to dark navy for contrast */
     font-size: 1.75rem;
+    font-weight: 600; /* Make icon symbols bolder */
   }
 
   .value-prop-title {
-    font-size: 1.25rem;
+    font-size: 1.375rem; /* Increased from 1.25rem */
     font-weight: 700;
     color: var(--color-primary);
     margin-bottom: var(--space-sm);
@@ -94,6 +95,7 @@
     color: var(--color-body);
     line-height: 1.6;
     margin: 0;
+    font-size: 1.0625rem; /* Added explicit size for readability */
   }
 
   @media (max-width: 768px) {

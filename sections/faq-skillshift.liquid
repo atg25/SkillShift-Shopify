@@ -1,0 +1,201 @@
+{% comment %}
+  FAQ Section - SkillShift Custom
+  
+  Displays frequently asked questions with:
+  - Expandable accordion items
+  - Smooth animations
+  - Mint green accents on active state
+  - Optional section heading
+{% endcomment %}
+
+<section class="faq">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="section-title">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    
+    {%- if section.settings.description != blank -%}
+      <p class="section-description">{{ section.settings.description }}</p>
+    {%- endif -%}
+    
+    {%- if section.blocks.size > 0 -%}
+      <div class="faq-list">
+        {%- for block in section.blocks -%}
+          <details class="faq-item" {{ block.shopify_attributes }}>
+            <summary class="faq-question">
+              <span>{{ block.settings.question }}</span>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </summary>
+            <div class="faq-answer">
+              {{ block.settings.answer }}
+            </div>
+          </details>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% stylesheet %}
+  .faq {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .faq-item {
+    background: white;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: all var(--transition-base);
+  }
+
+  .faq-item:hover {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .faq-item[open] {
+    border-color: var(--color-accent);
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    user-select: none;
+    transition: background-color var(--transition-base);
+  }
+
+  .faq-question:hover {
+    background-color: var(--color-surface);
+  }
+
+  .faq-item[open] .faq-question {
+    color: var(--color-accent);
+    background-color: rgba(77, 227, 200, 0.05);
+  }
+
+  .faq-icon {
+    color: var(--color-accent);
+    transition: transform var(--transition-base);
+    font-size: 0.875rem;
+    min-width: 1rem;
+    margin-left: var(--spacing-sm);
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+    color: var(--color-body);
+    line-height: 1.6;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .faq-question::marker,
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "FAQ - SkillShift",
+  "tag": "section",
+  "class": "section-faq",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Section Description",
+      "default": "Find answers to common questions about our courses and training programs"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What is included in the course?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Our courses include comprehensive video lessons, downloadable resources, lifetime access, and a certificate of completion.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ - SkillShift",
+      "category": "FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long do I have access to the courses?",
+            "answer": "<p>You get lifetime access to all course materials. Learn at your own pace with no time limits.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you offer refunds?",
+            "answer": "<p>Yes! We offer a 30-day money-back guarantee. If you're not satisfied, request a full refund within 30 days.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will I receive a certificate?",
+            "answer": "<p>Absolutely! Upon completing a course, you'll receive a verified certificate you can share on LinkedIn and your resume.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I access courses on mobile?",
+            "answer": "<p>Yes! Our platform is fully responsive and works on all devices. Learn anywhere, anytime.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

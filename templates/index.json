@@ -33,8 +33,8 @@
       "settings": {
         "heading": "Master the Skills That Drive Career Success",
         "subtitle": "Expert-led courses in web development, automation, and IT systems—designed for professionals ready to transform their careers",
-        "primary_cta_text": "Explore Courses",
-        "primary_cta_link": "/collections/all",
+        "primary_cta_text": "View Courses",
+        "primary_cta_link": "#courses",
         "secondary_cta_text": "Meet Andrew",
         "secondary_cta_link": "#about-andrew",
         "show_trust_badges": true,
@@ -296,7 +296,7 @@
         "bio": "<p>I'm a technology consultant specializing in automation, data systems optimization, and full-stack development. With extensive experience architecting solutions for enterprise clients and growing businesses, I've helped organizations streamline operations, eliminate inefficiencies, and leverage technology to achieve measurable results.</p><p>My approach combines deep technical expertise with a focus on practical, business-driven outcomes. From building responsive web applications with React to engineering data validation systems with Python and SQL, I deliver solutions that solve real problems and create lasting value. My work has spanned industries including transportation, technology consulting, and digital media.</p><p>Through SkillShift, I'm committed to sharing the strategies, frameworks, and technical skills that drive success in today's digital economy. My courses are designed for professionals who want to advance their careers, entrepreneurs building their businesses, and anyone ready to master the tools that power modern technology.</p>",
         "credentials": "<p><strong>Core Competencies:</strong> Full-Stack Development • Data Systems & SQL • Python Automation • JavaScript & React • API Integration • Process Optimization • Project Management</p><p><strong>Technologies:</strong> Python, JavaScript, React, SQL, Java, Shopify, Drupal, GitHub, Salesforce CRM, Figma, Agile Development</p><p><strong>Professional Experience:</strong> Technology Consultant • Systems Integration Specialist at NJ Transit • Freelance Web Developer & Automation Engineer</p>",
         "primary_cta_text": "View All Courses",
-        "primary_cta_link": "/collections/all",
+        "primary_cta_link": "#courses",
         "secondary_cta_text": "Connect on LinkedIn",
         "secondary_cta_link": "https://linkedin.com/in/andrew-gardner2026"
       }
@@ -342,18 +342,104 @@
         "description": "Join thousands of professionals who've transformed their careers with SkillShift"
       }
     },
+    "social_proof_skillshift": {
+      "type": "social-proof-skillshift",
+      "blocks": {
+        "stat_1": {
+          "type": "stat_badge",
+          "settings": {
+            "icon": "users",
+            "number": "5,247",
+            "label": "Students Enrolled"
+          }
+        },
+        "stat_2": {
+          "type": "stat_badge",
+          "settings": {
+            "icon": "certificate",
+            "number": "3,892",
+            "label": "Certificates Issued"
+          }
+        },
+        "stat_3": {
+          "type": "stat_badge",
+          "settings": {
+            "icon": "chart-line",
+            "number": "94%",
+            "label": "Completion Rate"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ],
+      "settings": {
+        "heading": "Trusted by Professionals Worldwide",
+        "show_live_counter": true,
+        "counter_label": "Someone just enrolled in a course"
+      }
+    },
     "cta_skillshift": {
       "type": "cta-skillshift",
       "settings": {
         "heading": "Ready to Transform Your Career?",
         "subtitle": "Join thousands of professionals who've already started their journey to success",
         "primary_cta_text": "Get Started Today",
-        "primary_cta_link": "/collections/all",
-        "secondary_cta_text": "Browse All Courses",
-        "secondary_cta_link": "/collections/all",
+        "primary_cta_link": "#courses",
+        "secondary_cta_text": "See Course Details",
+        "secondary_cta_link": "#courses",
         "guarantee_icon": "shield-alt",
         "guarantee_text": "30-Day Money-Back Guarantee • No Risk",
         "background_image": ""
+      }
+    },
+    "newsletter_skillshift": {
+      "type": "newsletter-skillshift",
+      "blocks": {
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "lightbulb",
+            "text": "Weekly tech tips and career insights"
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "gift",
+            "text": "Exclusive course discounts and early access"
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "file-download",
+            "text": "Free downloadable resources and templates"
+          }
+        },
+        "benefit_4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "graduation-cap",
+            "text": "Industry trends and learning strategies"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_1",
+        "benefit_2",
+        "benefit_3",
+        "benefit_4"
+      ],
+      "settings": {
+        "heading": "Get Your Free Career Transformation Checklist",
+        "description": "Join 10,000+ professionals receiving weekly insights on tech careers, automation, and skill development",
+        "lead_magnet_title": "Free Download",
+        "lead_magnet_description": "10-Step Career Transformation Checklist",
+        "button_text": "Get Free Checklist",
+        "privacy_text": "We respect your privacy. Unsubscribe anytime."
       }
     },
     "faq_skillshift": {
@@ -423,7 +509,9 @@
     "value_props_skillshift",
     "about_andrew_skillshift",
     "testimonials_skillshift",
+    "social_proof_skillshift",
     "cta_skillshift",
+    "newsletter_skillshift",
     "faq_skillshift"
   ]
 }

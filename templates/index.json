@@ -1,210 +1,429 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero_skillshift": {
+      "type": "hero-skillshift",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "trust_badge_1": {
+          "type": "trust_badge",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "icon": "users",
+            "text": "5,000+ Students Enrolled"
           }
         },
-        "text": {
-          "type": "text",
+        "trust_badge_2": {
+          "type": "trust_badge",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "icon": "star",
+            "text": "4.9/5 Average Rating"
           }
         },
-        "button": {
-          "type": "buttons",
+        "trust_badge_3": {
+          "type": "trust_badge",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "icon": "certificate",
+            "text": "Industry-Recognized Certificates"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "trust_badge_1",
+        "trust_badge_2",
+        "trust_badge_3"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "heading": "Master the Skills That Drive Career Success",
+        "subtitle": "Expert-led courses in web development, automation, and IT systems—designed for professionals ready to transform their careers",
+        "primary_cta_text": "Explore Courses",
+        "primary_cta_link": "/collections/all",
+        "secondary_cta_text": "Meet Andrew",
+        "secondary_cta_link": "#about-andrew",
+        "show_trust_badges": true,
+        "background_image": ""
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "trust_bar_skillshift": {
+      "type": "trust-bar-skillshift",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "stat_1": {
+          "type": "stat",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
+            "icon": "users",
+            "number": "5,000+",
+            "label": "Active Students"
           }
         },
-        "text": {
-          "type": "text",
+        "stat_2": {
+          "type": "stat",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "icon": "graduation-cap",
+            "number": "25+",
+            "label": "Expert Courses"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "icon": "star",
+            "number": "4.9/5",
+            "label": "Average Rating"
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "icon": "trophy",
+            "number": "98%",
+            "label": "Success Rate"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "stat_1",
+        "stat_2",
+        "stat_3",
+        "stat_4"
       ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
+      "settings": {}
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
+    "services_grid_skillshift": {
+      "type": "services-grid-skillshift",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "service_1": {
+          "type": "service_card",
           "settings": {
-            "collection": ""
+            "badge_text": "MOST POPULAR",
+            "icon": "code",
+            "title": "Full-Stack Web Development",
+            "price": "$299",
+            "description": "Master modern web development with JavaScript, React, and backend technologies",
+            "features": "50+ video lessons|Lifetime access|Certificate of completion|Real-world projects",
+            "button_text": "Enroll Now",
+            "button_link": "/products/full-stack-course"
           }
         },
-        "product": {
-          "type": "product",
+        "service_2": {
+          "type": "service_card",
           "settings": {
-            "product": "",
-            "second_image": false
+            "badge_text": "",
+            "icon": "robot",
+            "title": "Python Automation",
+            "price": "$199",
+            "description": "Automate repetitive tasks and optimize workflows with Python scripting",
+            "features": "30+ video lessons|Lifetime access|Certificate of completion|Automation templates",
+            "button_text": "Enroll Now",
+            "button_link": "/products/python-automation"
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "service_3": {
+          "type": "service_card",
           "settings": {
-            "collection": ""
+            "badge_text": "BEST VALUE",
+            "icon": "database",
+            "title": "Data Systems & SQL",
+            "price": "$249",
+            "description": "Build and optimize data systems with SQL, database design, and integration",
+            "features": "40+ video lessons|Lifetime access|Certificate of completion|Practice databases",
+            "button_text": "Enroll Now",
+            "button_link": "/products/data-systems-sql"
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "service_1",
+        "service_2",
+        "service_3"
       ],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "Featured Courses",
+        "description": "Transform your career with hands-on training in the most in-demand tech skills"
       }
     },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
+    "value_props_skillshift": {
+      "type": "value-props-skillshift",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "value_1": {
+          "type": "value_prop",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "icon": "graduation-cap",
+            "title": "Expert Instruction",
+            "description": "Learn from a seasoned technology consultant with real-world experience in enterprise systems and automation"
           }
         },
-        "column2": {
-          "type": "column",
+        "value_2": {
+          "type": "value_prop",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "icon": "clock",
+            "title": "Learn at Your Pace",
+            "description": "Lifetime access to all course materials means you can study on your schedule, whenever and wherever works best"
           }
         },
-        "column3": {
-          "type": "column",
+        "value_3": {
+          "type": "value_prop",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "icon": "certificate",
+            "title": "Verified Certificates",
+            "description": "Earn industry-recognized credentials you can showcase on LinkedIn and your resume to stand out to employers"
+          }
+        },
+        "value_4": {
+          "type": "value_prop",
+          "settings": {
+            "icon": "project-diagram",
+            "title": "Real-World Projects",
+            "description": "Build a portfolio of practical projects that demonstrate your skills to potential employers and clients"
+          }
+        },
+        "value_5": {
+          "type": "value_prop",
+          "settings": {
+            "icon": "rocket",
+            "title": "Career Advancement",
+            "description": "Gain the technical skills and confidence you need to land your dream job or advance in your current role"
+          }
+        },
+        "value_6": {
+          "type": "value_prop",
+          "settings": {
+            "icon": "shield-alt",
+            "title": "Money-Back Guarantee",
+            "description": "Try any course risk-free with our 30-day money-back guarantee—no questions asked"
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "value_1",
+        "value_2",
+        "value_3",
+        "value_4",
+        "value_5",
+        "value_6"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "Why Choose SkillShift?",
+        "description": "Experience the difference with our proven approach to professional development"
+      }
+    },
+    "about_andrew_skillshift": {
+      "type": "about-andrew-skillshift",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "5+",
+            "label": "Years Experience"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "50+",
+            "label": "Clients Served"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "100+",
+            "label": "Projects Delivered"
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "number": "10+",
+            "label": "Technologies"
+          }
+        },
+        "achievement_1": {
+          "type": "achievement",
+          "settings": {
+            "icon": "cogs",
+            "text": "Automation Specialist"
+          }
+        },
+        "achievement_2": {
+          "type": "achievement",
+          "settings": {
+            "icon": "database",
+            "text": "Data Systems Expert"
+          }
+        },
+        "achievement_3": {
+          "type": "achievement",
+          "settings": {
+            "icon": "code",
+            "text": "Full-Stack Developer"
+          }
+        },
+        "achievement_4": {
+          "type": "achievement",
+          "settings": {
+            "icon": "chart-line",
+            "text": "Process Optimization"
+          }
+        },
+        "achievement_5": {
+          "type": "achievement",
+          "settings": {
+            "icon": "project-diagram",
+            "text": "Systems Integration"
+          }
+        },
+        "achievement_6": {
+          "type": "achievement",
+          "settings": {
+            "icon": "rocket",
+            "text": "Enterprise Solutions"
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3",
+        "stat_4",
+        "achievement_1",
+        "achievement_2",
+        "achievement_3",
+        "achievement_4",
+        "achievement_5",
+        "achievement_6"
+      ],
+      "settings": {
+        "heading": "Meet Your Instructor",
+        "name": "Andrew Gardner",
+        "title": "Technology & Automation Consultant",
+        "bio": "<p>I'm a technology consultant specializing in automation, data systems optimization, and full-stack development. With extensive experience architecting solutions for enterprise clients and growing businesses, I've helped organizations streamline operations, eliminate inefficiencies, and leverage technology to achieve measurable results.</p><p>My approach combines deep technical expertise with a focus on practical, business-driven outcomes. From building responsive web applications with React to engineering data validation systems with Python and SQL, I deliver solutions that solve real problems and create lasting value. My work has spanned industries including transportation, technology consulting, and digital media.</p><p>Through SkillShift, I'm committed to sharing the strategies, frameworks, and technical skills that drive success in today's digital economy. My courses are designed for professionals who want to advance their careers, entrepreneurs building their businesses, and anyone ready to master the tools that power modern technology.</p>",
+        "credentials": "<p><strong>Core Competencies:</strong> Full-Stack Development • Data Systems & SQL • Python Automation • JavaScript & React • API Integration • Process Optimization • Project Management</p><p><strong>Technologies:</strong> Python, JavaScript, React, SQL, Java, Shopify, Drupal, GitHub, Salesforce CRM, Figma, Agile Development</p><p><strong>Professional Experience:</strong> Technology Consultant • Systems Integration Specialist at NJ Transit • Freelance Web Developer & Automation Engineer</p>",
+        "primary_cta_text": "View All Courses",
+        "primary_cta_link": "/collections/all",
+        "secondary_cta_text": "Connect on LinkedIn",
+        "secondary_cta_link": "https://linkedin.com/in/andrew-gardner2026"
+      }
+    },
+    "testimonials_skillshift": {
+      "type": "testimonials-skillshift",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "Andrew's Full-Stack Development course completely transformed my career. I went from knowing basic HTML to building complete web applications. The real-world projects were invaluable!",
+            "author_name": "Sarah Martinez",
+            "author_location": "Software Developer, Newark"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "The Python Automation course saved me hours every week. I automated my entire workflow and impressed my boss. Got a promotion within 3 months of completing the course!",
+            "author_name": "Michael Chen",
+            "author_location": "Operations Manager, NYC"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "Best investment in my career. Andrew explains complex concepts in a way that just clicks. The certificate I earned helped me land multiple job interviews.",
+            "author_name": "Jessica Thompson",
+            "author_location": "Data Analyst, Jersey City"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
+      ],
+      "settings": {
+        "heading": "What Students Are Saying",
+        "description": "Join thousands of professionals who've transformed their careers with SkillShift"
+      }
+    },
+    "cta_skillshift": {
+      "type": "cta-skillshift",
+      "settings": {
+        "heading": "Ready to Transform Your Career?",
+        "subtitle": "Join thousands of professionals who've already started their journey to success",
+        "primary_cta_text": "Get Started Today",
+        "primary_cta_link": "/collections/all",
+        "secondary_cta_text": "Browse All Courses",
+        "secondary_cta_link": "/collections/all",
+        "guarantee_icon": "shield-alt",
+        "guarantee_text": "30-Day Money-Back Guarantee • No Risk",
+        "background_image": ""
+      }
+    },
+    "faq_skillshift": {
+      "type": "faq-skillshift",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long do I have access to the courses?",
+            "answer": "<p>You get lifetime access to all course materials. Learn at your own pace with no time limits or deadlines. Once you enroll, the content is yours forever, including any future updates.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you offer refunds?",
+            "answer": "<p>Yes! We offer a 30-day money-back guarantee on all courses. If you're not satisfied with your purchase for any reason, simply request a full refund within 30 days of enrollment—no questions asked.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will I receive a certificate upon completion?",
+            "answer": "<p>Absolutely! Upon completing a course, you'll receive a verified certificate of completion that you can share on LinkedIn, add to your resume, and showcase to potential employers.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I access courses on mobile devices?",
+            "answer": "<p>Yes! Our platform is fully responsive and works seamlessly on all devices—desktop, tablet, and mobile. Learn anywhere, anytime, from any device.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if I get stuck or have questions?",
+            "answer": "<p>Every course includes access to our community forum where you can ask questions and get support from both instructors and fellow students. Most questions are answered within 24 hours.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Are there any prerequisites for the courses?",
+            "answer": "<p>Prerequisites vary by course. Each course page clearly lists any required knowledge or skills. Most courses are designed for beginners to intermediate learners, with clear progression paths.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6"
+      ],
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "description": "Find answers to common questions about our courses and training programs"
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "hero_skillshift",
+    "trust_bar_skillshift",
+    "services_grid_skillshift",
+    "value_props_skillshift",
+    "about_andrew_skillshift",
+    "testimonials_skillshift",
+    "cta_skillshift",
+    "faq_skillshift"
   ]
 }

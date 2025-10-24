@@ -1,0 +1,53 @@
+{% doc %}
+  Renders JSON-LD structured data for a course/product.
+  
+  Helps search engines understand and display rich snippets for courses including:
+  - Course name, description, provider
+  - Pricing information
+  - Ratings and reviews
+  - Course duration and format
+
+  @param {product} product - The product/course object
+
+  @example
+  {% render 'schema-course', product: product %}
+{% enddoc %}
+
+{%- if product -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": {{ product.title | json }},
+  "description": {{ product.description | strip_html | truncate: 300 | json }},
+  "provider": {
+    "@type": "Person",
+    "name": "Andrew Gardner",
+    "jobTitle": "Technology & Automation Consultant",
+    "url": "{{ shop.url }}"
+  },
+  {%- if product.featured_image -%}
+  "image": {{ product.featured_image | image_url: width: 1200 | json }},
+  {%- endif -%}
+  "offers": {
+    "@type": "Offer",
+    "price": "{{ product.price | money_without_currency | remove: ',' }}",
+    "priceCurrency": "{{ cart.currency.iso_code }}",
+    "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+    "url": "{{ shop.url }}{{ product.url }}"
+  },
+  {%- if product.metafields.reviews.rating != blank -%}
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ product.metafields.reviews.rating }}",
+    "reviewCount": "{{ product.metafields.reviews.count | default: 1 }}"
+  },
+  {%- endif -%}
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "PT{{ product.metafields.course.duration | default: 10 }}H"
+  }
+}
+</script>
+{%- endif -%}

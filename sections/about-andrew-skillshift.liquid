@@ -10,7 +10,9 @@
   - Call-to-action buttons
 {% endcomment %}
 
-<section class="about-instructor">
+{% render 'schema-instructor', name: section.settings.name, job_title: section.settings.title, description: section.settings.bio %}
+
+<section class="about-instructor" id="about-andrew">
   <div class="container">
     {%- if section.settings.heading != blank -%}
       <h2 class="section-title">{{ section.settings.heading }}</h2>
@@ -20,7 +22,7 @@
       <div class="about-image-column">
         {%- if section.settings.image != blank -%}
           <div class="about-image-wrapper">
-            {{ section.settings.image | image_url: width: 500 | image_tag: class: 'about-image' }}
+            {{ section.settings.image | image_url: width: 500 | image_tag: class: 'about-image', loading: 'lazy', alt: section.settings.name }}
           </div>
         {%- endif -%}
         
@@ -261,7 +263,8 @@
     margin-top: var(--spacing-md);
   }
 
-  @media (max-width: 968px) {
+  /* Enhanced Mobile Responsiveness */
+  @media (max-width: 1023px) {
     .about-content {
       grid-template-columns: 1fr;
       gap: var(--spacing-lg);
@@ -272,12 +275,41 @@
     }
 
     .about-stats {
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-achievements {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .about-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .about-achievements {
+      grid-template-columns: 1fr;
     }
 
     .about-ctas {
       flex-direction: column;
     }
+
+    .about-ctas .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .about-name {
+      font-size: 1.5rem;
+    }
+
+    .about-title {
+      font-size: 1.125rem;
+    }
+  }
 
     .about-ctas .btn {
       width: 100%;

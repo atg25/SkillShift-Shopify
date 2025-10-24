@@ -1,0 +1,35 @@
+{% doc %}
+  Renders JSON-LD structured data for instructor/person schema.
+  
+  Helps search engines understand instructor credentials and social profiles.
+
+  @param {string} name - Instructor name
+  @param {string} job_title - Job title
+  @param {string} description - Bio description
+
+  @example
+  {% render 'schema-instructor', name: 'Andrew Gardner', job_title: 'Technology Consultant' %}
+{% enddoc %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ name | default: 'Andrew Gardner' }}",
+  "jobTitle": "{{ job_title | default: 'Technology & Automation Consultant' }}",
+  "description": {{ description | strip_html | truncate: 300 | default: 'Technology consultant specializing in automation, data systems optimization, and full-stack development' | json }},
+  "url": "{{ shop.url }}",
+  "sameAs": [
+    "https://linkedin.com/in/andrew-gardner2026",
+    "https://github.com/atg25"
+  ],
+  "knowsAbout": [
+    "Full-Stack Development",
+    "Python Automation",
+    "Data Systems & SQL",
+    "JavaScript & React",
+    "API Integration",
+    "Process Optimization"
+  ]
+}
+</script>

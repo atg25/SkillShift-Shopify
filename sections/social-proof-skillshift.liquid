@@ -1,0 +1,322 @@
+{% comment %}
+  Social Proof Bar - SkillShift Custom
+  
+  Displays trust indicators:
+  - Live enrollment counter
+  - Course completion badges
+  - "As Featured In" logos
+  - Social proof statistics
+{% endcomment %}
+
+<section class="social-proof-bar">
+  <div class="container">
+    <div class="social-proof-grid">
+      {%- if section.settings.show_enrollment_badge -%}
+        <div class="proof-item enrollment-live">
+          <i class="fas fa-{{ section.settings.enrollment_icon }}"></i>
+          <div class="proof-text">
+            <span class="proof-number" id="live-enrollment">{{ section.settings.enrollment_number }}</span>
+            <span class="proof-label">{{ section.settings.enrollment_label }}</span>
+          </div>
+        </div>
+      {%- endif -%}
+      
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'stat_badge' -%}
+            <div class="proof-item" {{ block.shopify_attributes }}>
+              {%- if block.settings.icon != blank -%}
+                <i class="fas fa-{{ block.settings.icon }}"></i>
+              {%- endif -%}
+              <div class="proof-text">
+                <span class="proof-number">{{ block.settings.number }}</span>
+                <span class="proof-label">{{ block.settings.label }}</span>
+              </div>
+            </div>
+            
+          {%- when 'logo' -%}
+            <div class="proof-logo" {{ block.shopify_attributes }}>
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 200 | image_tag: loading: 'lazy', alt: block.settings.alt_text }}
+              {%- else -%}
+                <span class="logo-placeholder">{{ block.settings.alt_text }}</span>
+              {%- endif -%}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .social-proof-bar {
+    padding: var(--space-2xl) 0;
+    background: linear-gradient(to right, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .social-proof-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3xl);
+    flex-wrap: wrap;
+  }
+
+  .proof-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+  }
+
+  .proof-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .proof-item i {
+    font-size: 2rem;
+    color: var(--mint-green);
+  }
+
+  .enrollment-live {
+    border: 2px solid var(--mint-green);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(77, 227, 200, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(77, 227, 200, 0);
+    }
+  }
+
+  .enrollment-live i {
+    color: #ff6b6b;
+    animation: beat 1.5s ease-in-out infinite;
+  }
+
+  @keyframes beat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  .proof-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .proof-number {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-extrabold);
+    color: var(--navy-deep);
+    line-height: 1;
+  }
+
+  .proof-label {
+    font-size: 0.75rem;
+    color: var(--card-text-secondary);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .proof-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm) var(--space-lg);
+    opacity: 0.7;
+    transition: opacity var(--transition-base);
+    filter: grayscale(100%);
+  }
+
+  .proof-logo:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+
+  .proof-logo img {
+    max-height: 40px;
+    width: auto;
+  }
+
+  .logo-placeholder {
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--card-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .social-proof-grid {
+      gap: var(--space-lg);
+    }
+
+    .proof-item {
+      flex: 1 1 45%;
+      min-width: 140px;
+    }
+
+    .proof-number {
+      font-size: 1.125rem;
+    }
+
+    .proof-item i {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .proof-item {
+      flex: 1 1 100%;
+    }
+
+    .social-proof-bar {
+      padding: var(--space-xl) 0;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  // Simulate live enrollment counter
+  document.addEventListener('DOMContentLoaded', function() {
+    const counter = document.getElementById('live-enrollment');
+    if (counter) {
+      const baseNumber = parseInt(counter.textContent);
+      
+      function updateCounter() {
+        const randomIncrement = Math.random() > 0.7 ? 1 : 0;
+        if (randomIncrement) {
+          const currentNum = parseInt(counter.textContent);
+          counter.textContent = currentNum + 1;
+        }
+      }
+      
+      // Update every 10-30 seconds randomly
+      setInterval(updateCounter, Math.random() * 20000 + 10000);
+    }
+  });
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Social Proof Bar - SkillShift",
+  "tag": "section",
+  "class": "section-social-proof",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Live Enrollment Counter"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_enrollment_badge",
+      "label": "Show Live Enrollment Badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "enrollment_icon",
+      "label": "Icon",
+      "default": "fire",
+      "info": "Font Awesome icon name (without fa- prefix)"
+    },
+    {
+      "type": "text",
+      "id": "enrollment_number",
+      "label": "Starting Number",
+      "default": "12"
+    },
+    {
+      "type": "text",
+      "id": "enrollment_label",
+      "label": "Label Text",
+      "default": "enrolled in the last 24 hours"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat_badge",
+      "name": "Stat Badge",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Font Awesome Icon",
+          "default": "certificate",
+          "info": "Enter icon name without 'fa-' prefix"
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "892"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Certificates Awarded"
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "name": "Featured Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo Image"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Alt Text / Placeholder",
+          "default": "As Featured In"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Social Proof Bar - SkillShift",
+      "category": "Social Proof",
+      "blocks": [
+        {
+          "type": "stat_badge",
+          "settings": {
+            "icon": "certificate",
+            "number": "892",
+            "label": "Certificates Awarded"
+          }
+        },
+        {
+          "type": "stat_badge",
+          "settings": {
+            "icon": "user-check",
+            "number": "98%",
+            "label": "Completion Rate"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

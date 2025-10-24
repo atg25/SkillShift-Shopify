@@ -1,0 +1,376 @@
+{% comment %}
+  Newsletter Signup - SkillShift Custom
+  
+  Email capture section with lead magnet:
+  - Compelling headline and value proposition
+  - Email form integrated with Shopify customer emails
+  - Privacy notice
+  - Success confirmation
+{% endcomment %}
+
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-content">
+      <div class="newsletter-text">
+        {%- if section.settings.icon != blank -%}
+          <div class="newsletter-icon">
+            <i class="fas fa-{{ section.settings.icon }}"></i>
+          </div>
+        {%- endif -%}
+        
+        {%- if section.settings.heading != blank -%}
+          <h2 class="newsletter-heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        
+        {%- if section.settings.description != blank -%}
+          <p class="newsletter-description">{{ section.settings.description }}</p>
+        {%- endif -%}
+        
+        {%- if section.settings.features != blank -%}
+          {%- assign features = section.settings.features | split: '|' -%}
+          <ul class="newsletter-features">
+            {%- for feature in features -%}
+              <li>
+                <i class="fas fa-check-circle"></i>
+                {{ feature | strip }}
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+      
+      <div class="newsletter-form-wrapper">
+        {% form 'customer', class: 'newsletter-form' %}
+          {% if form.posted_successfully? %}
+            <div class="newsletter-success" role="status">
+              <i class="fas fa-check-circle"></i>
+              <p>{{ section.settings.success_message | default: 't:skillshift.newsletter.success' }}</p>
+            </div>
+          {% else %}
+            <div class="form-field">
+              <label for="newsletter-email" class="sr-only">{{ section.settings.email_placeholder | default: 't:skillshift.newsletter.email_placeholder' }}</label>
+              <input 
+                type="email" 
+                id="newsletter-email"
+                name="contact[email]" 
+                placeholder="{{ section.settings.email_placeholder | default: 't:skillshift.newsletter.email_placeholder' }}"
+                aria-label="Email address for newsletter"
+                required
+                data-track="newsletter-input"
+              >
+              <button 
+                type="submit" 
+                class="btn btn-primary"
+                data-track="newsletter-submit"
+                data-location="newsletter-section"
+              >
+                {{ section.settings.button_text | default: 't:skillshift.newsletter.button' }}
+              </button>
+            </div>
+            
+            {% if form.errors %}
+              <div class="form-errors" role="alert">
+                {{ form.errors | default_errors }}
+              </div>
+            {% endif %}
+            
+            {%- if section.settings.privacy_text != blank -%}
+              <p class="newsletter-privacy">
+                <i class="fas fa-lock"></i>
+                {{ section.settings.privacy_text }}
+              </p>
+            {%- endif -%}
+          {% endif %}
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .newsletter-section {
+    padding: var(--space-5xl) 0;
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .newsletter-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(77, 227, 200, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .newsletter-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .newsletter-text {
+    color: var(--white);
+  }
+
+  .newsletter-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(77, 227, 200, 0.2);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-lg);
+  }
+
+  .newsletter-icon i {
+    font-size: 2rem;
+    color: var(--mint-green);
+  }
+
+  .newsletter-heading {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--white);
+    margin: 0 0 var(--space-md) 0;
+    line-height: 1.2;
+  }
+
+  .newsletter-description {
+    font-size: 1.125rem;
+    color: var(--light-blue);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+  }
+
+  .newsletter-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .newsletter-features li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0;
+    color: var(--white);
+    font-size: 1rem;
+  }
+
+  .newsletter-features i {
+    color: var(--mint-green);
+    font-size: 1.125rem;
+    flex-shrink: 0;
+  }
+
+  .newsletter-form-wrapper {
+    background: var(--glass-strong);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-2xl);
+    border: 1px solid rgba(77, 227, 200, 0.3);
+  }
+
+  .newsletter-form .form-field {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 0.875rem 1.25rem;
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    font-family: var(--font-body);
+    transition: all var(--transition-base);
+  }
+
+  .newsletter-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--mint-green);
+    box-shadow: 0 0 0 3px rgba(77, 227, 200, 0.1);
+  }
+
+  .newsletter-form .btn {
+    white-space: nowrap;
+    padding: 0.875rem 1.75rem;
+  }
+
+  .newsletter-privacy {
+    font-size: 0.875rem;
+    color: var(--card-text-secondary);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .newsletter-privacy i {
+    color: var(--mint-green);
+  }
+
+  .newsletter-success {
+    background: #d4edda;
+    border: 2px solid #28a745;
+    color: #155724;
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .newsletter-success i {
+    font-size: 3rem;
+    color: #28a745;
+  }
+
+  .newsletter-success p {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .form-errors {
+    background: #f8d7da;
+    border: 2px solid #dc3545;
+    color: #721c24;
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    margin-top: var(--space-md);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 1023px) {
+    .newsletter-content {
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+    }
+
+    .newsletter-section {
+      padding: var(--space-4xl) 0;
+    }
+
+    .newsletter-form-wrapper {
+      padding: var(--space-xl);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .newsletter-form .form-field {
+      flex-direction: column;
+    }
+
+    .newsletter-form .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .newsletter-heading {
+      font-size: 1.75rem;
+    }
+
+    .newsletter-description {
+      font-size: 1rem;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Newsletter Signup - SkillShift",
+  "tag": "section",
+  "class": "section-newsletter",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Lead Magnet Content"
+    },
+    {
+      "type": "text",
+      "id": "icon",
+      "label": "Font Awesome Icon",
+      "default": "gift",
+      "info": "Enter icon name without 'fa-' prefix"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Get the Free Career Transformation Checklist"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Join 5,000+ professionals receiving weekly tips, exclusive content, and early access to new courses"
+    },
+    {
+      "type": "textarea",
+      "id": "features",
+      "label": "Benefits List",
+      "default": "Weekly career advancement tips|Exclusive discounts on courses|Early access to new content|Free downloadable resources",
+      "info": "Separate features with | character"
+    },
+    {
+      "type": "header",
+      "content": "Form Settings"
+    },
+    {
+      "type": "text",
+      "id": "email_placeholder",
+      "label": "Email Placeholder",
+      "default": "Enter your email address"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Get Free Guide"
+    },
+    {
+      "type": "text",
+      "id": "privacy_text",
+      "label": "Privacy Notice",
+      "default": "We respect your privacy. Unsubscribe anytime."
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success Message",
+      "default": "Thanks! Check your email for the free checklist."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter Signup - SkillShift",
+      "category": "Email"
+    }
+  ]
+}
+{% endschema %}

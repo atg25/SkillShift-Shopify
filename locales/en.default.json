@@ -527,5 +527,95 @@
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
     }
+  },
+  "skillshift": {
+    "general": {
+      "learn_more": "Learn More",
+      "get_started": "Get Started",
+      "view_all": "View All",
+      "enroll_now": "Enroll Now",
+      "browse_courses": "Browse Courses"
+    },
+    "hero": {
+      "heading": "Master the Skills That Drive Career Success",
+      "subtitle": "Expert-led courses in web development, automation, and IT systems—designed for professionals ready to transform their careers",
+      "primary_cta": "Explore Courses",
+      "secondary_cta": "Meet Andrew",
+      "trust_badge_students": "5,000+ Students Enrolled",
+      "trust_badge_rating": "4.9/5 Average Rating",
+      "trust_badge_certificates": "Industry-Recognized Certificates"
+    },
+    "services": {
+      "heading": "Featured Courses",
+      "description": "Transform your career with hands-on training in the most in-demand tech skills",
+      "badge_popular": "MOST POPULAR",
+      "badge_value": "BEST VALUE",
+      "badge_new": "NEW"
+    },
+    "value_props": {
+      "heading": "Why Choose SkillShift?",
+      "description": "Experience the difference with our proven approach to professional development",
+      "expert_title": "Expert Instruction",
+      "expert_description": "Learn from a seasoned technology consultant with real-world experience in enterprise systems and automation",
+      "pace_title": "Learn at Your Pace",
+      "pace_description": "Lifetime access to all course materials means you can study on your schedule, whenever and wherever works best",
+      "certificate_title": "Verified Certificates",
+      "certificate_description": "Earn industry-recognized credentials you can showcase on LinkedIn and your resume to stand out to employers",
+      "projects_title": "Real-World Projects",
+      "projects_description": "Build a portfolio of practical projects that demonstrate your skills to potential employers and clients",
+      "career_title": "Career Advancement",
+      "career_description": "Gain the technical skills and confidence you need to land your dream job or advance in your current role",
+      "guarantee_title": "Money-Back Guarantee",
+      "guarantee_description": "Try any course risk-free with our 30-day money-back guarantee—no questions asked"
+    },
+    "about": {
+      "heading": "Meet Your Instructor",
+      "name": "Andrew Gardner",
+      "title": "Technology & Automation Consultant",
+      "primary_cta": "View All Courses",
+      "secondary_cta": "Connect on LinkedIn",
+      "credentials_heading": "Credentials & Expertise"
+    },
+    "testimonials": {
+      "heading": "What Students Are Saying",
+      "description": "Join thousands of professionals who've transformed their careers with SkillShift"
+    },
+    "cta": {
+      "heading": "Ready to Transform Your Career?",
+      "subtitle": "Join thousands of professionals who've already started their journey to success",
+      "primary_button": "Get Started Today",
+      "secondary_button": "Browse All Courses",
+      "guarantee": "30-Day Money-Back Guarantee • No Risk"
+    },
+    "faq": {
+      "heading": "Frequently Asked Questions",
+      "description": "Find answers to common questions about our courses and training programs",
+      "q1_question": "How long do I have access to the courses?",
+      "q1_answer": "You get lifetime access to all course materials. Learn at your own pace with no time limits or deadlines. Once you enroll, the content is yours forever, including any future updates.",
+      "q2_question": "Do you offer refunds?",
+      "q2_answer": "Yes! We offer a 30-day money-back guarantee on all courses. If you're not satisfied with your purchase for any reason, simply request a full refund within 30 days of enrollment—no questions asked.",
+      "q3_question": "Will I receive a certificate upon completion?",
+      "q3_answer": "Absolutely! Upon completing a course, you'll receive a verified certificate of completion that you can share on LinkedIn, add to your resume, and showcase to potential employers.",
+      "q4_question": "Can I access courses on mobile devices?",
+      "q4_answer": "Yes! Our platform is fully responsive and works seamlessly on all devices—desktop, tablet, and mobile. Learn anywhere, anytime, from any device.",
+      "q5_question": "What if I get stuck or have questions?",
+      "q5_answer": "Every course includes access to our community forum where you can ask questions and get support from both instructors and fellow students. Most questions are answered within 24 hours.",
+      "q6_question": "Are there any prerequisites for the courses?",
+      "q6_answer": "Prerequisites vary by course. Each course page clearly lists any required knowledge or skills. Most courses are designed for beginners to intermediate learners, with clear progression paths."
+    },
+    "trust_bar": {
+      "students": "Active Students",
+      "courses": "Expert Courses",
+      "rating": "Average Rating",
+      "success": "Success Rate"
+    },
+    "newsletter": {
+      "heading": "Get the Free Career Transformation Checklist",
+      "description": "Join 5,000+ professionals receiving weekly tips, exclusive content, and early access to new courses",
+      "email_placeholder": "Enter your email address",
+      "button": "Get Free Guide",
+      "privacy": "We respect your privacy. Unsubscribe anytime.",
+      "success": "Thanks! Check your email for the free checklist."
+    }
   }
 }

@@ -65,7 +65,15 @@
               {%- endif -%}
               
               {%- if block.settings.button_text != blank -%}
-                <a href="{{ block.settings.button_link }}" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: var(--space-md);">
+                <a 
+                  href="{{ block.settings.button_link }}" 
+                  class="btn btn-primary" 
+                  style="width: 100%; justify-content: center; margin-top: var(--space-md);"
+                  data-track="course-enroll-click"
+                  data-course="{{ block.settings.title | handleize }}"
+                  data-price="{{ block.settings.price }}"
+                  aria-label="Enroll in {{ block.settings.title }}"
+                >
                   {{ block.settings.button_text }}
                 </a>
               {%- endif -%}

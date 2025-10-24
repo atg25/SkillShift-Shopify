@@ -140,21 +140,22 @@
 
   .about-stat {
     background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    padding: var(--space-md);
+    padding: var(--space-lg); /* Increased from var(--space-md) */
     border-radius: var(--radius-lg);
     text-align: center;
     color: white;
+    box-shadow: var(--shadow-md); /* Added shadow for depth */
   }
 
   .about-stat-number {
-    font-size: 1.75rem;
+    font-size: 2rem; /* Increased from 1.75rem */
     font-weight: 700;
     line-height: 1;
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-sm); /* Increased from var(--space-xs) */
   }
 
   .about-stat-label {
-    font-size: 0.875rem;
+    font-size: 0.9375rem; /* Increased from 0.875rem */
     opacity: 0.95;
   }
 
@@ -165,14 +166,14 @@
   }
 
   .about-name {
-    font-size: 2rem;
+    font-size: 2.25rem; /* Increased from 2rem */
     font-weight: 700;
     color: var(--color-primary);
     margin: 0;
   }
 
   .about-title {
-    font-size: 1.25rem;
+    font-size: 1.375rem; /* Increased from 1.25rem */
     color: var(--color-accent);
     font-weight: 600;
     margin: 0;
@@ -200,7 +201,7 @@
   }
 
   .credentials-heading {
-    font-size: 1.125rem;
+    font-size: 1.25rem; /* Increased from 1.125rem */
     font-weight: 700;
     color: var(--color-primary);
     margin: 0 0 var(--space-sm) 0;
@@ -216,6 +217,7 @@
   .credentials-content {
     color: var(--color-body);
     line-height: 1.6;
+    font-size: 1.0625rem; /* Added explicit size */
   }
 
   .credentials-content p {
@@ -235,26 +237,28 @@
     background: white;
     border: 2px solid var(--color-accent);
     color: var(--color-primary);
-    padding: var(--space-xs) var(--space-md);
+    padding: var(--space-sm) var(--space-lg); /* Increased padding */
     border-radius: var(--radius-full);
-    font-size: 0.875rem;
+    font-size: 0.9375rem; /* Increased from 0.875rem */
     font-weight: 600;
     transition: all var(--transition-base);
   }
 
   .achievement-badge:hover {
     background: var(--color-accent);
-    color: white;
+    color: var(--navy-deep); /* Changed from white to dark navy for better contrast */
     transform: translateY(-2px);
+    box-shadow: var(--shadow-md); /* Added shadow on hover */
   }
 
   .achievement-badge i {
     color: var(--color-accent);
     transition: color var(--transition-base);
+    font-size: 1.125rem; /* Make icons slightly larger */
   }
 
   .achievement-badge:hover i {
-    color: white;
+    color: var(--navy-deep); /* Changed from white to dark navy */
   }
 
   .about-ctas {

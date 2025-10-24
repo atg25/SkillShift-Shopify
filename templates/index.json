@@ -98,7 +98,7 @@
             "description": "Master modern web development with JavaScript, React, and backend technologies",
             "features": "50+ video lessons|Lifetime access|Certificate of completion|Real-world projects",
             "button_text": "Enroll Now",
-            "button_link": "/products/full-stack-course"
+            "button_link": "#newsletter"
           }
         },
         "service_2": {
@@ -111,7 +111,7 @@
             "description": "Automate repetitive tasks and optimize workflows with Python scripting",
             "features": "30+ video lessons|Lifetime access|Certificate of completion|Automation templates",
             "button_text": "Enroll Now",
-            "button_link": "/products/python-automation"
+            "button_link": "#newsletter"
           }
         },
         "service_3": {
@@ -124,7 +124,7 @@
             "description": "Build and optimize data systems with SQL, database design, and integration",
             "features": "40+ video lessons|Lifetime access|Certificate of completion|Practice databases",
             "button_text": "Enroll Now",
-            "button_link": "/products/data-systems-sql"
+            "button_link": "#newsletter"
           }
         }
       },
@@ -466,6 +466,21 @@
         "heading": "Frequently Asked Questions",
         "description": "Find answers to common questions about our courses and training programs"
       }
+    },
+    "sticky_cta_skillshift": {
+      "type": "sticky-cta-skillshift",
+      "settings": {
+        "product_title": "SkillShift Courses",
+        "show_urgency": true,
+        "urgency_icon": "fire",
+        "urgency_text": "Limited time offer - 30% off",
+        "show_price": true,
+        "compare_price": "$299",
+        "price": "$209",
+        "cta_text": "Enroll Now",
+        "cta_link": "#newsletter",
+        "scroll_threshold": 800
+      }
     }
   },
   "order": [
@@ -478,6 +493,7 @@
     "social_proof_skillshift",
     "cta_skillshift",
     "newsletter_skillshift",
-    "faq_skillshift"
+    "faq_skillshift",
+    "sticky_cta_skillshift"
   ]
 }

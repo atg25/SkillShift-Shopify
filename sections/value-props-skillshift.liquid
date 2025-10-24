@@ -1,0 +1,210 @@
+{% comment %}
+  Value Propositions Section - SkillShift Custom
+  
+  Displays key benefits with:
+  - Icon badges
+  - Short descriptive text
+  - Responsive grid layout
+  - Optional section heading
+{% endcomment %}
+
+<section class="value-props">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="section-title">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    
+    {%- if section.settings.description != blank -%}
+      <p class="section-description">{{ section.settings.description }}</p>
+    {%- endif -%}
+    
+    {%- if section.blocks.size > 0 -%}
+      <div class="value-props-grid">
+        {%- for block in section.blocks -%}
+          <div class="value-prop-card" {{ block.shopify_attributes }}>
+            {%- if block.settings.icon != blank -%}
+              <div class="value-prop-icon">
+                <i class="fas fa-{{ block.settings.icon }}"></i>
+              </div>
+            {%- endif -%}
+            
+            {%- if block.settings.title != blank -%}
+              <h3 class="value-prop-title">{{ block.settings.title }}</h3>
+            {%- endif -%}
+            
+            {%- if block.settings.description != blank -%}
+              <p class="value-prop-description">{{ block.settings.description }}</p>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% stylesheet %}
+  .value-props {
+    padding: var(--spacing-xl) 0;
+    background: var(--color-surface);
+  }
+
+  .value-props-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+
+  .value-prop-card {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--transition-base);
+    border: 1px solid transparent;
+  }
+
+  .value-prop-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+  }
+
+  .value-prop-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+    border-radius: var(--radius-full);
+    color: white;
+    font-size: 1.75rem;
+  }
+
+  .value-prop-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .value-prop-description {
+    color: var(--color-body);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .value-props-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Value Propositions - SkillShift",
+  "tag": "section",
+  "class": "section-value-props",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Why Choose SkillShift?"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Section Description",
+      "default": "Experience the difference with our proven approach to professional development"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "value_prop",
+      "name": "Value Proposition",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon",
+          "default": "star",
+          "info": "Font Awesome icon name without 'fa-' prefix. Examples: star, bolt, trophy, graduation-cap, rocket"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Expert Instructors"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Learn from industry professionals with years of real-world experience"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Value Propositions - SkillShift",
+      "category": "Benefits",
+      "blocks": [
+        {
+          "type": "value_prop",
+          "settings": {
+            "icon": "graduation-cap",
+            "title": "Expert Instructors",
+            "description": "Learn from industry professionals with years of real-world experience"
+          }
+        },
+        {
+          "type": "value_prop",
+          "settings": {
+            "icon": "clock",
+            "title": "Learn at Your Pace",
+            "description": "Lifetime access means you can study whenever works best for you"
+          }
+        },
+        {
+          "type": "value_prop",
+          "settings": {
+            "icon": "certificate",
+            "title": "Verified Certificates",
+            "description": "Earn recognized credentials you can showcase to employers"
+          }
+        },
+        {
+          "type": "value_prop",
+          "settings": {
+            "icon": "users",
+            "title": "Community Support",
+            "description": "Join thousands of students in our active learning community"
+          }
+        },
+        {
+          "type": "value_prop",
+          "settings": {
+            "icon": "rocket",
+            "title": "Career Advancement",
+            "description": "Gain the skills you need to land your dream job or promotion"
+          }
+        },
+        {
+          "type": "value_prop",
+          "settings": {
+            "icon": "shield-alt",
+            "title": "Money-Back Guarantee",
+            "description": "30-day refund policy means you can try risk-free"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

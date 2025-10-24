@@ -1,0 +1,182 @@
+{% comment %}
+  Trust Bar Section - SkillShift Custom
+  
+  Displays key statistics and trust indicators:
+  - Horizontal layout with stats
+  - Animated numbers
+  - Icons with gradient backgrounds
+  - Optional dividers
+{% endcomment %}
+
+<section class="trust-bar">
+  <div class="container">
+    {%- if section.blocks.size > 0 -%}
+      <div class="trust-stats">
+        {%- for block in section.blocks -%}
+          <div class="trust-stat" {{ block.shopify_attributes }}>
+            {%- if block.settings.icon != blank -%}
+              <div class="trust-stat-icon">
+                <i class="fas fa-{{ block.settings.icon }}"></i>
+              </div>
+            {%- endif -%}
+            
+            <div class="trust-stat-content">
+              {%- if block.settings.number != blank -%}
+                <div class="trust-stat-number">{{ block.settings.number }}</div>
+              {%- endif -%}
+              
+              {%- if block.settings.label != blank -%}
+                <div class="trust-stat-label">{{ block.settings.label }}</div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% stylesheet %}
+  .trust-bar {
+    padding: var(--spacing-lg) 0;
+    background: white;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .trust-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+  }
+
+  .trust-stat {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    min-width: 200px;
+  }
+
+  .trust-stat-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+    border-radius: var(--radius-md);
+    color: white;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .trust-stat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .trust-stat-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .trust-stat-label {
+    font-size: 0.875rem;
+    color: var(--color-body);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 768px) {
+    .trust-stats {
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+
+    .trust-stat {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Trust Bar - SkillShift",
+  "tag": "section",
+  "class": "section-trust-bar",
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon",
+          "default": "users",
+          "info": "Font Awesome icon name without 'fa-' prefix. Examples: users, star, graduation-cap, trophy"
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "50,000+",
+          "info": "Include any formatting like commas, plus signs, or percentages"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Active Students"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust Bar - SkillShift",
+      "category": "Trust",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "icon": "users",
+            "number": "50,000+",
+            "label": "Active Students"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "icon": "graduation-cap",
+            "number": "200+",
+            "label": "Expert Courses"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "icon": "star",
+            "number": "4.9/5",
+            "label": "Average Rating"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "icon": "trophy",
+            "number": "98%",
+            "label": "Success Rate"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

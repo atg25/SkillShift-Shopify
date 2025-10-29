@@ -1084,3 +1084,118 @@ section:nth-of-type(even):not(.hero):not(.cta):not(.newsletter-section) {
     padding: var(--space-3xl) 0;
   }
 }
+
+/* ====================== 14. HEADER & FOOTER CUSTOMIZATION ====================== */
+
+/* Header - Match Hero Navy Color Scheme */
+.header-wrapper {
+  background: var(--gradient-hero) !important;
+  border-bottom: none !important;
+}
+
+.header {
+  background: transparent !important;
+}
+
+/* Logo Styling - Larger and Centered */
+.header__heading-logo-wrapper {
+  max-width: 280px !important; /* Increased from ~200px */
+  width: 280px !important;
+}
+
+.header__heading-logo {
+  max-width: 100% !important;
+}
+
+/* Adjust logo on mobile */
+@media (max-width: 989px) {
+  .header__heading-logo-wrapper {
+    max-width: 220px !important;
+    width: 220px !important;
+  }
+}
+
+/* Header text color - white on navy */
+.header__heading-link,
+.header a,
+.header .list-menu__item,
+.header__icon,
+.header svg {
+  color: white !important;
+  fill: white !important;
+}
+
+/* Header hover states */
+.header a:hover,
+.header .list-menu__item:hover {
+  color: var(--mint-green) !important;
+}
+
+/* Search and cart icons */
+.header__icons .icon,
+.header__icon--cart .icon,
+.header__icon--search .icon {
+  color: white !important;
+}
+
+.header__icons .icon:hover,
+.header__icon--cart:hover .icon,
+.header__icon--search:hover .icon {
+  color: var(--mint-green) !important;
+}
+
+/* Mobile menu button */
+.header__icon--menu {
+  color: white !important;
+}
+
+.header__icon--menu:hover {
+  color: var(--mint-green) !important;
+}
+
+/* Footer - Simplified and Clean */
+.footer {
+  background: var(--navy-deep) !important;
+  color: white !important;
+}
+
+.footer h2,
+.footer a,
+.footer .list-menu__item {
+  color: white !important;
+}
+
+.footer a:hover {
+  color: var(--mint-green) !important;
+}
+
+/* Footer newsletter section */
+.footer__newsletter .field__input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.footer__newsletter .field__input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__newsletter .field__button {
+  background: var(--mint-green);
+  color: var(--navy-deep);
+}
+
+.footer__newsletter .field__button:hover {
+  background: #5de9d0;
+}
+
+/* Footer copyright */
+.footer__copyright,
+.footer__copyright a {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 0.875rem;
+}
+
+.footer__copyright a:hover {
+  color: var(--mint-green) !important;
+}

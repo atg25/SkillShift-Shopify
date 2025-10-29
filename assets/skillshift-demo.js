@@ -3,15 +3,15 @@
  * Adds smooth scrolling, button interactions, and demo-friendly behavior
  */
 
-(function() {
+(function () {
   'use strict';
 
   // Smooth scroll for all anchor links
   function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
-        
+
         // Skip empty anchors
         if (href === '#' || href === '#!') {
           e.preventDefault();
@@ -23,21 +23,21 @@
 
         if (targetElement) {
           e.preventDefault();
-          
+
           const headerOffset = 80; // Account for fixed header if present
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
           window.scrollTo({
             top: offsetPosition,
-            behavior: 'smooth'
+            behavior: 'smooth',
           });
 
           // Add highlight effect
           targetElement.style.transition = 'background-color 0.3s ease';
           const originalBg = window.getComputedStyle(targetElement).backgroundColor;
           targetElement.style.backgroundColor = 'rgba(77, 227, 200, 0.1)';
-          
+
           setTimeout(() => {
             targetElement.style.backgroundColor = originalBg;
           }, 1000);
@@ -48,8 +48,8 @@
 
   // Add visual feedback to all buttons
   function initButtonFeedback() {
-    document.querySelectorAll('.btn').forEach(button => {
-      button.addEventListener('click', function(e) {
+    document.querySelectorAll('.btn').forEach((button) => {
+      button.addEventListener('click', function (e) {
         // Add ripple effect
         const ripple = document.createElement('span');
         ripple.classList.add('ripple');
@@ -96,21 +96,21 @@
   // Add active state to navigation on scroll
   function initScrollSpy() {
     const sections = document.querySelectorAll('section[id]');
-    
+
     window.addEventListener('scroll', () => {
       let current = '';
-      
-      sections.forEach(section => {
+
+      sections.forEach((section) => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        
+
         if (window.pageYOffset >= sectionTop - 200) {
           current = section.getAttribute('id');
         }
       });
 
       // Update active links if navigation exists
-      document.querySelectorAll('a[href^="#"]').forEach(link => {
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + current) {
           link.classList.add('active');
@@ -122,15 +122,15 @@
   // Add form validation feedback
   function initFormValidation() {
     const forms = document.querySelectorAll('form');
-    
-    forms.forEach(form => {
+
+    forms.forEach((form) => {
       const emailInputs = form.querySelectorAll('input[type="email"]');
-      
-      emailInputs.forEach(input => {
-        input.addEventListener('blur', function() {
+
+      emailInputs.forEach((input) => {
+        input.addEventListener('blur', function () {
           if (this.value && !this.validity.valid) {
             this.style.borderColor = '#dc3545';
-            
+
             let errorMsg = this.nextElementSibling;
             if (!errorMsg || !errorMsg.classList.contains('error-message')) {
               errorMsg = document.createElement('span');
@@ -153,17 +153,17 @@
 
   // Add analytics tracking simulation (for demo)
   function initAnalyticsTracking() {
-    document.querySelectorAll('[data-track]').forEach(element => {
-      element.addEventListener('click', function() {
+    document.querySelectorAll('[data-track]').forEach((element) => {
+      element.addEventListener('click', function () {
         const trackingData = {
           action: this.getAttribute('data-track'),
           location: this.getAttribute('data-location') || 'unknown',
           element: this.tagName,
-          text: this.textContent.trim().substring(0, 50)
+          text: this.textContent.trim().substring(0, 50),
         };
-        
+
         console.log('📊 Analytics Event:', trackingData);
-        
+
         // Show subtle feedback in console
         if (window.location.hostname === 'localhost' || window.location.hostname.includes('myshopify')) {
           console.log('%c✓ Tracking event logged', 'color: #4de3c8; font-weight: bold;');
@@ -176,28 +176,31 @@
   function initLoadingComplete() {
     window.addEventListener('load', () => {
       document.body.classList.add('loaded');
-      
+
       // Fade in animations for elements
       const animatedElements = document.querySelectorAll('.card, .value-prop, .testimonial-card, .faq-item');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '0';
-            entry.target.style.transform = 'translateY(20px)';
-            entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            
-            setTimeout(() => {
-              entry.target.style.opacity = '1';
-              entry.target.style.transform = 'translateY(0)';
-            }, 100);
-            
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
 
-      animatedElements.forEach(el => observer.observe(el));
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '0';
+              entry.target.style.transform = 'translateY(20px)';
+              entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+              setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+              }, 100);
+
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      animatedElements.forEach((el) => observer.observe(el));
     });
   }
 
@@ -268,7 +271,10 @@
   `;
   document.head.appendChild(style);
 
-  console.log('%c🚀 SkillShift Demo Mode Active', 'background: #0f2b4c; color: #4de3c8; padding: 8px 12px; border-radius: 4px; font-weight: bold;');
+  console.log(
+    '%c🚀 SkillShift Demo Mode Active',
+    'background: #0f2b4c; color: #4de3c8; padding: 8px 12px; border-radius: 4px; font-weight: bold;'
+  );
   console.log('%cAll interactive features enabled:', 'color: #4de3c8; font-weight: bold;');
   console.log('  ✓ Smooth anchor scrolling');
   console.log('  ✓ Button ripple effects');
@@ -277,5 +283,4 @@
   console.log('  ✓ Form validation');
   console.log('  ✓ Analytics tracking (logged to console)');
   console.log('  ✓ Scroll-triggered animations');
-
 })();
